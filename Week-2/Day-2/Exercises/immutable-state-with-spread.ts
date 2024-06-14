@@ -26,7 +26,11 @@ const academyUsers: SomeUsers = {
 
 const ageUpdater = (originalUsers: SomeUsers) => {
   // TODO: Your code goes here
-  
+  const usersWithAge: SomeUsers = {};
+  for (const key in originalUsers) {
+    usersWithAge[key] = { ...originalUsers[key], age: 21 };
+  }
+  return usersWithAge;
 }
 
 // Call the Age Updater function
@@ -43,4 +47,4 @@ console.log('Original Academy:', academyUsers)
 console.log('Updated Academy:', updatedUsers)
 
 // EOF this code at the end is for teaching purposes, it allows us to redeclare types with the same name
-export {}
+export { }

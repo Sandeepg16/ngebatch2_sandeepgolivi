@@ -22,4 +22,6 @@ const academyFolks2: string[] = ['Alice', 'Bob', 'Charles', 'Danielle', 'Akshay'
 // Say hello to all the academy folks using the spread operator
 // TODO
 helloAcademy(academyFolks2);
+const acadamy3: string[] = [...academyFolks,...academyFolks2];
+helloAcademy(acadamy3);
 // EOF

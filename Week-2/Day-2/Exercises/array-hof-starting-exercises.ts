@@ -31,7 +31,7 @@ console.log('Academites above 12 months:', above12Months)
 
 // Now lets filter the older academites out and then shout out the NAME of each, all in one go
 // ...we need some "method chaining", also called "functional composition"
-const filteredAndShouted = 'TODO'
+const filteredAndShouted = academitePetsWithAges.filter((pet)=> pet.age < 12).map((item:any)=> item.name);
 console.log('Shout out to our young best friends ', filteredAndShouted)
 
 /*

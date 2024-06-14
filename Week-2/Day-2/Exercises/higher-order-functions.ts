@@ -85,9 +85,22 @@ export function getLanguageCounts(developers: Developer[]) {
 // In case of a tie, include all same-age developers listed in the same order as they appeared in the original input array.
 // For the list above, it would return ['Aisha']
 export function getOldest(developers: Developer[]) {
+  if (developers.length === 0) {
+    return [];
+  }
 
+  let maxAge = developers[0].age;
+  let oldestDevelopers = [developers[0].firstName];
+
+  for (let i = 1; i < developers.length; i++) {
+    if (developers[i].age > maxAge) {
+      maxAge = developers[i].age;
+      oldestDevelopers = [developers[i].firstName];
+    } else if (developers[i].age === maxAge) {
+      oldestDevelopers.push(developers[i].firstName);
+    }
+  }
 }
-
 // isGlobalGroup should return true if the list contains a developer from each of these 5 zones:
 // 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'
 // For the list above, it would return false
