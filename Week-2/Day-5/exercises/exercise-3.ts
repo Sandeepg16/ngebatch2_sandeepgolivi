@@ -99,13 +99,15 @@ console.log('Food data:', foodData)
 console.log('')
 console.log('Results:')
 
-const tasks = []
+const tasks:any = []
 userData.forEach((user) => {
   tasks.push(findFavouriteFood(user.name))
 })
 
 // Part 1: Add some code here to find the favourite food for all users concurrently
+let result = Promise.all(tasks);
 
+result.then((data)=>console.log("data",data))
 // ----- EXERCISES -------------------------------------------------------
 
 // Part 1

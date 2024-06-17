@@ -111,3 +111,9 @@ findFavouriteFood('Tim').then(console.log) // Test rejection for missing food id
 // Part 1: Refactor queryUser and queryFood to 'reject' when missing the required values
 // Part 2. Add '.catch' blocks to these function chains to catch the rejected promises
 // For both of these, add console logs so you can check the output
+
+const promise1 = queryUser('Tim')
+promise1.then((data:any)=> console.log("data",data)).catch((error)=> console.log(error));
+
+const promise2 = queryFood(null)
+promise2.then((data:any)=> console.log("data",data)).catch((error)=> console.log(error))
