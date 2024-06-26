@@ -1,6 +1,7 @@
 import './App.css'
 
 const App = () => {
+  console.log("testing");
   return (
     <div className='app'>
       <h1>Country Population</h1>
