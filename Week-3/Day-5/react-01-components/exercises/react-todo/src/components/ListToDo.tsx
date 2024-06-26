@@ -11,11 +11,11 @@ interface listTodoProps {
     todos: todo[]
 }
 
-export default function ListToDo(props: listTodoProps) {
+export default function ListToDo(props: listTodoProps, {removeTodo}:any) {
   return (
     <div>
       {props.todos.map((todo: any) => (
-        <TodoItem todo={todo} />
+        <TodoItem todo={todo} removeTodo={removeTodo} />
       ))}
     </div>
   );
