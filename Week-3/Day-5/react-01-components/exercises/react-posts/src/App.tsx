@@ -1,4 +1,5 @@
 import './App.css'
+import Comment from './components/Comment'
 
 function App() {
   const comments = [
@@ -23,36 +24,7 @@ function App() {
   return (
     <div className='app'>
       <h1>My Great Social Media Posts</h1>
-
-      <div className='comment'>
-        <div className='user'>
-          <img
-            className='user-image'
-            src={comments[0].author.avatarUrl}
-            alt={comments[0].author.name}
-          />
-          <div className='user-name'>{comments[0].author.name}</div>
-        </div>
-
-        <div className='comment-text'>{comments[0].text}</div>
-
-        <div className='comment-date'>{comments[0].date}</div>
-      </div>
-
-      <div className='comment'>
-        <div className='user'>
-          <img
-            className='user-image'
-            src={comments[1].author.avatarUrl}
-            alt={comments[1].author.name}
-          />
-          <div className='user-name'>{comments[1].author.name}</div>
-        </div>
-
-        <div className='comment-text'>{comments[1].text}</div>
-
-        <div className='comment-date'>{comments[1].date}</div>
-      </div>
+    {comments.map((comment:any)=> (<Comment comment={comment} />))}
     </div>
   )
 }
